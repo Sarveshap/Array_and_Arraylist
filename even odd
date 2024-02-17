@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+public class javalab{
+       public static void main(String[] args) throws IOException{
+       BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+       Scanner scan=new Scanner(System.in);
+       System.out.println("Enter Number of Input Elements:");
+       int size=scan.nextInt();
+       int index_even=0;
+       int index_odd=0;
+       double[] inputArray=new double[size];
+       double[] even= new double[size];
+       double[] odd=new double[size];
+       String array=br.readLine();
+       String[] input = array.trim().split("\\s+"); //one or more
+       for(int i = 0;i<size;i++){
+           inputArray[i]=Double.parseDouble(input[i]);
+       }
+       for(int j=0;j<size;j++){
+           if(inputArray[j]%2==0){
+               even[index_even]=inputArray[j];
+               index_even++;
+           }
+           else{
+               odd[index_odd]=inputArray[j];
+               index_odd++;
+           }
+       }
+       System.out.println("Even Number are:");
+       for(int e =0;e<index_even;e++){
+           System.out.print(" "+even[e]);
+       }
+       System.out.println("\n Odd Numbers are:");
+       for(int e =0;e<index_odd;e++){
+           System.out.print(" "+odd[e]);
+       }
+       }
+}
